@@ -1,0 +1,46 @@
+body {
+	font-family: 'Arial';
+	font-size: 16px;
+	margin: 0;
+}
+
+header, main {
+	margin: 0 auto;
+	width: 600px;
+}
+
+header {
+	margin-bottom: 40px;
+}
+
+.tabs {
+	display: block;
+	margin: 0 0 40px;
+	padding: 0;
+
+	li {
+		background: #ccc;
+		color: #333;
+		cursor: pointer;
+		display: inline-block;
+		margin: 0;
+		padding: 5px 20px;
+		text-align: center;
+		width: 100px;
+
+		&.active {
+			background: #333;
+			color: #fff;
+		}
+	}
+}
+
+.tab-content {
+	display: none;
+	margin: 20px 0;
+
+	&.active {
+		display: block;
+	}
+}
+

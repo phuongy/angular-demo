@@ -1,0 +1,52 @@
+<!doctype html>
+<html ng-app="App">
+<head>
+<!-- inject:css -->
+<!-- endinject -->
+</head>
+<body ng-controller="AppCtrl">
+
+	<header>
+		<h1>Demo 2 : Moving from jQuery</h1>
+	</header>
+
+	<main>
+		
+		<!-- tabs -->
+		<ul class="tabs">
+			<li ng-class="{'active': tab == 'content-1'}" ng-click="tab = 'content-1'">Tab 1</li>
+			<li ng-class="{'active': tab == 'content-2'}" ng-click="tab = 'content-2'">Tab 2</li>
+			<li ng-class="{'active': tab == 'content-3'}" ng-click="tab = 'content-3'">Tab 3</li>
+			<li ng-class="{'active': tab == 'content-4'}" ng-click="tab = 'content-4'">Tab 4</li>
+		</ul>
+
+		<!-- tab content -->
+		<div class="tab-content" ng-class="{'active': tab == 'content-1'}">
+			tab 1 content
+		</div>
+		<div class="tab-content" ng-class="{'active': tab == 'content-2'}">
+			tab 2 content
+		</div>
+		<div class="tab-content" ng-class="{'active': tab == 'content-3'}">
+			tab 3 content
+		</div>
+		<div class="tab-content" ng-class="{'active': tab == 'content-4'}">
+			tab 4 content
+		</div>
+
+		
+
+	</main>
+
+
+<!-- inject:js -->
+<!-- endinject -->
+
+
+<!-- brower sync stuff -->
+<script type='text/javascript'>//<![CDATA[
+document.write("<script async src='//HOST:3000/browser-sync-client.1.3.6.js'><\/script>".replace(/HOST/g, location.hostname));
+//]]></script>
+<!-- end browser sync stuff -->
+</body>
+</html>

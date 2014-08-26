@@ -1,0 +1,73 @@
+<!doctype html>
+<html ng-app>
+<head>
+<!-- inject:css -->
+<!-- endinject -->
+</head>
+<body>
+
+	<header>
+		<h1>Demo 2 : Moving from jQuery</h1>
+	</header>
+
+	<main>
+
+		<!-- tabs -->
+		<ul class="tabs">
+			<li class="active" data-tab-content="content-1">Tab 1</li>
+			<li data-tab-content="content-2">Tab 2</li>
+			<li data-tab-content="content-3">Tab 3</li>
+			<li data-tab-content="content-4">Tab 4</li>
+		</ul>
+
+		<!-- tab content -->
+		<div id="content-1" class="tab-content active">
+			tab 1 content
+		</div>
+		<div id="content-2" class="tab-content">
+			tab 2 content
+		</div>
+		<div id="content-3" class="tab-content">
+			tab 3 content
+		</div>
+		<div id="content-4" class="tab-content">
+			tab 4 content
+		</div>
+
+	</main>
+
+
+<!-- inject:js -->
+<!-- endinject -->
+
+<script>
+
+	$(function() {
+
+		$(".tabs li").on("click", function() {
+
+			// set active tab
+			$(".tabs li.active").removeClass("active");
+			$(this).addClass("active");
+
+			// set active tab content
+			var content = $(this).attr("data-tab-content");
+
+			$(".tab-content.active").removeClass("active");
+			$("#" + content).addClass("active");
+
+			return false;
+		});
+
+	});
+
+</script>
+
+
+<!-- brower sync stuff -->
+<script type='text/javascript'>//<![CDATA[
+document.write("<script async src='//HOST:3000/browser-sync-client.1.3.6.js'><\/script>".replace(/HOST/g, location.hostname));
+//]]></script>
+<!-- end browser sync stuff -->
+</body>
+</html>

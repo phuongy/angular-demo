@@ -6,12 +6,20 @@ var gulp = require('gulp'),
 	mainBowerFiles = require('main-bower-files'),
 	inject = require('gulp-inject'),
 	order = require('gulp-order'),
-	es = require('event-stream');
+	es = require('event-stream'),
+	clean = require('gulp-rimraf');
 
 
 // default task
 
 gulp.task('default', ['build','watch','browser-sync']);
+
+// clean
+
+gulp.task('clean', function() {
+	return gulp.src('./dist')
+			   .pipe(clean());
+});
 
 
 // watch
@@ -28,7 +36,6 @@ gulp.task('watch', function() {
 gulp.task('browser-sync', function() {
 
 	var config = {
-		browser: "google chrome",
 		open: false,
 		port: 3000,
 		notify: false,
@@ -77,8 +84,9 @@ gulp.task('html', ['app','bower'], function() {
 	var target = gulp.src('index.html');
 
 	var sources = es.merge(
-					gulp.src(['dist/js/vendor/*.js'], {read:true}),
-					gulp.src(['dist/js/app/**/*.js'], {read:true})
+					gulp.src(['dist/js/vendor/*.*'], {read:true}),
+					gulp.src(['dist/js/app/**/*.js'], {read:true}),
+					gulp.src(['dist/css/*.css'], {read: true})
 				)
 					.pipe(order(scriptLoadOrder));
 
