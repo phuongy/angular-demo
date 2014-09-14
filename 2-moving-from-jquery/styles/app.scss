@@ -4,43 +4,71 @@ body {
 	margin: 0;
 }
 
-header, main {
+.container {
 	margin: 0 auto;
 	width: 600px;
 }
 
 header {
-	margin-bottom: 40px;
+	background: #e0e0e0;
+	padding: 40px 0 20px;
+
+	h1 {
+		color: #444;
+		font-size: 32px;
+		margin: 0;
+	}
+}
+
+nav {
+	background: #e0e0e0;
 }
 
 .tabs {
+	//border-bottom: 6px solid #666;
 	display: block;
 	margin: 0 0 40px;
-	padding: 0;
+	padding: 10px 0 0;
 
 	li {
-		background: #ccc;
+		background: #bbb;
+		border-radius: 5px 5px 0 0;
 		color: #333;
 		cursor: pointer;
 		display: inline-block;
-		margin: 0;
-		padding: 5px 20px;
+		font-size: 15px;
+		margin: 10px 0 0;
+		padding: 10px 20px;
 		text-align: center;
+		transition-duration: 0.3s;
 		width: 100px;
 
+		&:hover {
+			background: #bbb;
+			padding: 20px 20px 10px;
+		}
+
 		&.active {
-			background: #333;
-			color: #fff;
+			background: #fff;
+			padding: 20px 20px 10px;
 		}
 	}
 }
 
+main {
+	padding: 30px 0 0;
+}
+
 .tab-content {
 	display: none;
-	margin: 20px 0;
+	//margin: 20px 0;
+
+	h1 {
+		font-size: 60px;
+		text-align: center;
+	}
 
 	&.active {
 		display: block;
 	}
 }
-

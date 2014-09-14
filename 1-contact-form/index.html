@@ -1,0 +1,62 @@
+<!doctype html>
+<html ng-app>
+<head>
+<!-- inject:css -->
+<!-- endinject -->
+</head>
+<body>
+
+	<header>
+		<div class="container">
+			<h1>Demo 1 : Contact form</h1>
+		</div>
+	</header>
+
+	<main>
+		<div class="container">
+			<article class="content">
+				<ng-form>
+					<p>
+						<label>Name: </label>
+						<input type="text" ng-model="name" />
+					</p>
+					<p>
+						<label>Email: </label>
+						<input type="email" ng-model="email" />
+					</p>
+					<p>
+						<label>Phone: </label>
+						<input type="tel" ng-model="phone" />
+					</p>
+					<p>
+						<label>Message: </label>
+						<textarea ng-model="message"></textarea>
+					</p>
+					<p>
+						<button>Submit</button>
+					</p>
+				</ng-form>
+			</article>
+			<article class="submit">
+				<p>
+					name: {{name}}
+				</p>
+				<p>
+					address: {{address}}
+				</p>
+				<p>
+					email: {{email}}
+				</p>
+				<p>
+					phone: {{phone}}
+				</p>
+			</aside>
+		</div>
+	</main>
+
+
+<!-- inject:js -->
+<!-- endinject -->
+
+</body>
+</html>

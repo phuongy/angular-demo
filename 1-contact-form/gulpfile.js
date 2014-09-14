@@ -26,7 +26,7 @@ gulp.task('clean', function() {
 
 gulp.task('watch', function() {
 	gulp.watch(['styles/app.scss'], ['sass']);
-	gulp.watch(['*.html'], ['html']);
+	gulp.watch(['*.html'], ['build', browserSync.reload]);
 	gulp.watch(['app/**/*.*'], ['app', browserSync.reload]);
 });
 
@@ -63,7 +63,7 @@ gulp.task('sass',function() {
 	var stream = gulp.src('styles/app.scss')
 			   		.pipe(sass({sourcemap: true}))
 			   		.pipe(gulp.dest('dist/css'))
-			   		.pipe(filter('**/*.css'))
+			   		.pipe(filter('**/*.css')) 
         			.pipe(browserSync.reload({stream:true}));
 
 	return stream;
@@ -79,9 +79,9 @@ gulp.task('html', ['app','bower'], function() {
 								'**/vendor/**/*.*',
 								'**/app/**/*.*'
 							];
+							
 
-
-	var target = gulp.src('*.html');
+	var target = gulp.src(['*.html']);
 
 	var sources = es.merge(
 					gulp.src(['dist/js/vendor/*.*'], {read:true}),
@@ -117,3 +117,4 @@ gulp.task('bower', function() {
 	return stream;
 
 });
+

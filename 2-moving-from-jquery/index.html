@@ -7,33 +7,36 @@
 <body>
 
 	<header>
-		<h1>Demo 2 : Moving from jQuery</h1>
+		<div class="container">
+			<h1>Demo 2 : Angular directives (jQuery)</h1>
+		</div>
 	</header>
 
+	<nav>
+		<div class="container">
+			<ul class="tabs">
+				<li class="active" data-tab-content="content-1">Tab 1</li>
+				<li data-tab-content="content-2">Tab 2</li>
+				<li data-tab-content="content-3">Tab 3</li>
+				<li data-tab-content="content-4">Tab 4</li>
+			</ul>
+		</div>
+	</nav>
 	<main>
-
-		<!-- tabs -->
-		<ul class="tabs">
-			<li class="active" data-tab-content="content-1">Tab 1</li>
-			<li data-tab-content="content-2">Tab 2</li>
-			<li data-tab-content="content-3">Tab 3</li>
-			<li data-tab-content="content-4">Tab 4</li>
-		</ul>
-
-		<!-- tab content -->
-		<div id="content-1" class="tab-content active">
-			tab 1 content
+		<div class="container">
+			<div id="content-1" class="tab-content active">
+				<h1>1</h1>
+			</div>
+			<div id="content-2" class="tab-content">
+				<h1>2</h1>
+			</div>
+			<div id="content-3" class="tab-content">
+				<h1>3</h1>
+			</div>
+			<div id="content-4" class="tab-content">
+				<h1>4</h1>
+			</div>
 		</div>
-		<div id="content-2" class="tab-content">
-			tab 2 content
-		</div>
-		<div id="content-3" class="tab-content">
-			tab 3 content
-		</div>
-		<div id="content-4" class="tab-content">
-			tab 4 content
-		</div>
-
 	</main>
 
 

@@ -1,0 +1,95 @@
+<!doctype html>
+<html ng-app>
+<head>
+<!-- inject:css -->
+<!-- endinject -->
+</head>
+<body>
+
+	<header>
+		<div class="container">
+			<h1>Demo 1 : Contact Form - AngularJS</h1>
+		</div>
+	</header>
+
+	<main>
+
+		<div class="container">
+		
+			<article class="content">
+
+				<form name="form" novalidate>			
+
+					<fieldset>
+						<label>Name: *</label>
+						<input type="text" name="name" ng-model="contact.name" ng-model-options="{ updateOn: 'blur' }" required />
+						<div class="error-message" ng-show="form.name.$dirty && form.name.$invalid">
+							<span ng-show="form.name.$error.required">Name is required.</span>
+						</div>
+					</fieldset>
+
+					<fieldset>
+						<label>Email: *</label>
+						<input type="email" name="email" ng-model="contact.email" ng-model-options="{ updateOn: 'blur' }" required />
+						<div class="error-message" ng-show="form.email.$dirty && form.email.$invalid">
+							<span ng-show="form.email.$error.required">Email is required.</span>
+							<span ng-show="form.email.$error.email">Email format is invalid.</span>
+						</div>
+					</fieldset>
+
+					<fieldset>
+						<label>Message: *</label>
+						<textarea ng-model="contact.message" name="message" ng-model-options="{ updateOn: 'blur' }" required></textarea>
+						<div class="error-message" ng-show="form.message.$dirty && form.message.$invalid">						
+							<span ng-show="form.message.$error.required">Message is required.</span>
+						</div>
+					</fieldset>
+
+					<fieldset>
+						<label><input type="checkbox" ng-model="contact.copy" name="copy" />  Send me a copy of this email.</label>
+					</fieldset>
+
+					<fieldset>
+						<input type="submit" value="Send" />
+						<!--ng-disabled="!(form.$dirty && form.$valid)" />//-->
+					</fieldset>
+
+				</form>
+
+			</article>
+	
+
+			<aside class="results">
+				<div class="submit">
+					<!-- <div ng-show="form.$dirty && form.$invalid">
+						invalid
+					</div>
+					<div ng-show="form.$dirty && form.$valid">
+						valid
+					</div> -->
+					<p>
+						<strong>Name:</strong> {{contact.name}}
+					</p>
+					<p>
+						<strong>Email:</strong> {{contact.email}}
+					</p>
+					<p>
+						<strong>Message:</strong> {{contact.message}}
+					</p>
+					<p>
+						<strong>Copy:</strong> {{contact.copy}}
+					</p>
+				</div>
+			</aside>
+		</div>
+
+	</main>
+
+
+
+
+<!-- inject:js -->
+<!-- endinject -->
+
+</body>
+</html>
