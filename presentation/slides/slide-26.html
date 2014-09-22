@@ -1,0 +1,21 @@
+<h3>Loading the data based on the view</h3>
+
+<pre><code>
+    $routeProvider
+        .when('/users', {
+            templateUrl: 'views/users/main.html',
+            controller: UserCtrl,
+            controllerAs: 'user',
+            resolve: UserCtrl.resolve
+        })
+        .when('/user/:userid', {
+            templateUrl: 'views/users/view.html'
+            controller: UserViewCtrl,
+            controllerAs: 'userView',
+            resolve: UserViewCtrl.resolve
+        })
+        .otherwise({
+            redirectTo: '/views/main.html'
+        });
+    
+</code></pre>

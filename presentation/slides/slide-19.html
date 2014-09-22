@@ -1,0 +1,22 @@
+<h3>Extending HTML</h3>
+<pre><code>
+
+    &lt;my-button>&lt;/my-button&gt;
+    
+    angular
+        .module('app')
+        .directive('myButton', function() {
+
+            return {
+                strict: 'E',
+                replace: true,
+                controller: function() {
+
+                },
+                controllerAs: 'myButtonCtrl',
+                template: '&lt;button class="btn"&gt;&lt;/button&gt;'
+            }
+
+        });
+
+</code></pre>

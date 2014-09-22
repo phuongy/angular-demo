@@ -1,0 +1,25 @@
+<h3>Services and AJAX calls</h3>
+<pre><code>
+    angular
+        .module('app')
+        .controller('UserService', function( $http, $q ) {
+
+            function add(user) {
+
+                return $http.post('user/add', {
+                    params: { user: user}
+                }).then(function(response) {
+                    return response.data;
+                }, function(error) {
+                    return "error";
+                });
+            
+            }
+
+            return {
+                add: add
+            }
+        
+        });
+
+</code></pre>

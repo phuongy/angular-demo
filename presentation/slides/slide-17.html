@@ -1,0 +1,24 @@
+<h3>Dependency Injection</h3>
+<pre><code>
+    angular
+        .module('app')
+        .controller('PageCtrl', function(UserFactory, UserService) {
+    
+            this.users = UserFactory.users;
+
+            this.addUser = function(user) {
+                UserService
+                    .add(user)
+                    .then(function() {
+                        UserFactory.add(user);
+                    });
+
+            }
+
+            this.updateList = function() {
+                this.users = UserFactory.users;
+            }
+
+        });
+
+</code></pre>

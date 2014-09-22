@@ -1,0 +1,19 @@
+<h3>Setting up the dynamic views</h3>
+<pre><code>
+    angular
+        .module('app')
+        .config(['$routeProvider', function ($routeProvider) {
+
+            $routeProvider
+                .when('/users', {
+                    templateUrl: 'views/users/main.html'
+                })
+                .when('/user/:userid', {
+                    templateUrl: 'views/users/view.html'
+                })
+                .otherwise({
+                    redirectTo: '/views/main.html'
+                });
+        }]);
+
+</code></pre>

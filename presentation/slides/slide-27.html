@@ -1,0 +1,26 @@
+<h3>Loading the data based on the view</h3>
+
+<pre><code>
+    angular
+        .module('app')
+        .controller('UserCtrl', function(UserFactory, UserService) {
+            this.users = UserFactory.users;
+
+            this.updateList = function() {
+                this.users = UserFactory.users;
+            }
+
+            this.resolve = function() {
+                var self = this;
+
+                UserService
+                    .getAll()
+                    .then(function(response) {
+                        UserFactory.set(response.data);
+                        self.updateList;
+                    });
+            }
+
+        });
+
+</code></pre>

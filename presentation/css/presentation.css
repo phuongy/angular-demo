@@ -1,0 +1,16 @@
+.reveal h1, .reveal h2, .reveal h3 {
+	margin-bottom: 40px;
+}
+
+.reveal h1 {
+	font-size: 3.2em;
+	margin-bottom: 100px;
+}
+
+.reveal ul {
+
+}
+
+.reveal li {
+	margin: 15px 0;
+}

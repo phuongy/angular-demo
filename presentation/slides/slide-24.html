@@ -1,0 +1,18 @@
+<h3>View based controllers</h3>
+<pre><code>
+    $routeProvider
+        .when('/users', {
+            templateUrl: 'views/users/main.html',
+            controller: UserCtrl,
+            controllerAs: 'user',
+        })
+        .when('/user/:userid', {
+            templateUrl: 'views/users/view.html'
+            controller: UserViewCtrl,
+            controllerAs: 'userView'
+        })
+        .otherwise({
+            redirectTo: '/views/main.html'
+        });
+    
+</code></pre>

@@ -1,0 +1,27 @@
+<h3>Factory and Model objects</h3>
+<pre><code>
+    var User() {
+        this.id;
+        this.name;
+    }
+
+    angular
+        .module('app')
+        .factory('UserFactory', function() {
+        
+            var UserFactory = {};
+            UserFactory.users = [];
+
+            UserFactory.add = function(User) {
+                User.id = UserFactory.users.length;
+                UserFactory.users.push(User);
+            }
+
+            UserFactory.get = function(id) {
+                return UserFactory.users[id];
+            }
+
+            return UserFactory;
+        });
+
+</code></pre>
