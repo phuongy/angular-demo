@@ -8,8 +8,11 @@
         .directive('myButton', function() {
 
             return {
-                strict: 'E',
+                restrict: 'E',
                 replace: true,
+                link: function(scope, element, attrs, ctrl) {
+
+                },
                 controller: function() {
 
                 },

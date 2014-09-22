@@ -1,0 +1,109 @@
+body {
+	font-family: Arial;
+	font-size: 16px;
+	margin: 0;
+}
+
+.phone {
+	background: #ddd;
+	border: 2px solid #ccc;
+	border-radius: 20px;
+	height: 520px;
+	margin: 20px auto;
+	position: relative;
+	width: 280px;
+}
+
+.speaker {
+	background: #999;
+	border-radius: 3px;
+	height: 6px;
+	left: 0;
+	margin: 30px auto;
+	position: absolute;
+	right: 0;
+	width: 40px;
+}
+
+.screen {
+	background: #777;
+	border: 1px solid #ccc;
+	height: 380px;
+	margin: 65px auto;
+	overflow: hidden;
+	width: 260px;
+}
+
+.home-button {
+	background: #aaa;
+	border: 2px solid #999;
+	border-radius: 20px;
+	bottom: 16px;
+	cursor: pointer;
+	height: 39px;
+	left: 0;
+	margin: 0 auto;
+	position: absolute;
+	transition-duration: 0.3s;
+	right: 0;
+	width: 39px;
+
+	&:hover {
+		background: #999;
+	}
+}
+	
+	.home-button-symbol {
+		border: 2px solid #dadada;
+		border-radius: 3px;
+		bottom: 0;
+		height: 13px;
+		left: 0;
+		margin: auto;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 13px;
+	}
+
+
+.navbar {
+	background: #fafafa;
+	border-bottom: 1px solid #222;
+	position: relative;
+	z-index: 1;
+
+
+	h1 {
+		font-size: 13px;
+		margin: 0;
+		padding: 10px 0;
+		text-align: center;
+	}
+
+	button {
+		background: #fff;
+		border: 1px solid #ddd;
+		color: #999;
+		cursor: pointer;
+		padding: 5px 10px;
+		position: absolute;
+		top: 0;
+	}
+}
+
+.container {
+	background: #333;
+	color: #fff;
+	display: block;
+	height: 100%;
+	width: 100%;
+
+	[position='offscreen'] {
+		left: 100%;
+		position: absolute;
+		top: 0;
+	}
+}
+	
+	

@@ -1,0 +1,50 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+<!-- inject:css -->
+<!-- endinject -->
+</head>
+<body ng-controller="PageCtrl as page">
+
+	<header>
+		<div class="container">
+			<h1>Demo 5 : Refactoring Page Tabs</h1>
+		</div>
+	</header>
+
+	<nav>
+		<div class="container">
+			<ul class="tabs">
+				<li ng-class="{'active': page.isTabActive(1)}" ng-click="page.selectTab(1)">Tab 1</li>
+				<li ng-class="{'active': page.isTabActive(2)}" ng-click="page.selectTab(2)">Tab 2</li>
+				<li ng-class="{'active': page.isTabActive(3)}" ng-click="page.selectTab(3)">Tab 3</li>
+				<li ng-class="{'active': page.isTabActive(4)}" ng-click="page.selectTab(4)">Tab 4</li>
+			</ul>
+		</div>
+	</nav>
+
+	<main>
+		<div class="container">
+			<div class="tab-content" ng-class="{'active': page.isTabActive(1)}">
+				<h1>1</h1>
+			</div>
+			<div class="tab-content" ng-class="{'active': page.isTabActive(2)}">
+				<h1>2</h1>
+			</div>
+			<div class="tab-content" ng-class="{'active': page.isTabActive(3)}">
+				<h1>3</h1>
+			</div>
+			<div class="tab-content" ng-class="{'active': page.isTabActive(4)}">
+				<h1>4</h1>
+			</div>
+
+		</div>
+
+	</main>
+
+
+<!-- inject:js -->
+<!-- endinject -->
+
+</body>
+</html>

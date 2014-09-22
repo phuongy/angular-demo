@@ -4,13 +4,13 @@
     $routeProvider
         .when('/users', {
             templateUrl: 'views/users/main.html',
-            controller: UserCtrl,
+            controller: 'UserCtrl',
             controllerAs: 'user',
             resolve: UserCtrl.resolve
         })
         .when('/user/:userid', {
             templateUrl: 'views/users/view.html'
-            controller: UserViewCtrl,
+            controller: 'UserViewCtrl',
             controllerAs: 'userView',
             resolve: UserViewCtrl.resolve
         })
